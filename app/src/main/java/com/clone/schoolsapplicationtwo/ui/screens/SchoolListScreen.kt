@@ -10,8 +10,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.clone.schoolsapplicationtwo.vm.SchoolsViewModel
-
+import com.clone.schoolsapplicationtwo.ui.vm.SchoolsViewModel
 
 @Composable
 fun SchoolListScreen(viewModel: SchoolsViewModel) {

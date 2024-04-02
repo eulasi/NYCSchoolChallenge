@@ -4,12 +4,10 @@ import com.clone.schoolsapplicationtwo.data.Schools
 import com.clone.schoolsapplicationtwo.data.SchoolsApi
 import java.io.IOException
 
-// SchoolsRepository.kt
 interface SchoolsRepository {
     suspend fun getSchools(): Result<Schools>
 }
 
-// SchoolsRepositoryImpl.kt
 class SchoolsRepositoryImpl constructor(
     private val schoolsApi: SchoolsApi
 ) : SchoolsRepository {

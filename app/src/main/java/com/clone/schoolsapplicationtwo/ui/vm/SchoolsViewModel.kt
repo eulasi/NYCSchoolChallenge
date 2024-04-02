@@ -1,4 +1,4 @@
-package com.clone.schoolsapplicationtwo.vm
+package com.clone.schoolsapplicationtwo.ui.vm
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
