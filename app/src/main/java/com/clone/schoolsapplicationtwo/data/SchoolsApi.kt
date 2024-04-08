@@ -11,7 +11,7 @@ interface SchoolsApi {
     suspend fun getSchools(): Response<Schools>
 
     companion object {
-        const val BASE_URL = "https://data.cityofnewyork.us/resource/"
+        private const val BASE_URL = "https://data.cityofnewyork.us/resource/"
 
         val service: SchoolsApi by lazy {
             val gson = GsonBuilder().create()

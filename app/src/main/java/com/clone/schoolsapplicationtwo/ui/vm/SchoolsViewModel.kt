@@ -23,10 +23,10 @@ class SchoolsViewModel : ViewModel() {
                     _schools.postValue(schoolsList)
                 }
                 result.onFailure { error ->
-                    // Handle error
+                    error.printStackTrace()
                 }
             } catch (e: Exception) {
-                // Handle error
+                e.printStackTrace()
             }
         }
     }
