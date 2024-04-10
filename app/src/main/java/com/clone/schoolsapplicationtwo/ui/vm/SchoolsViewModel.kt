@@ -3,20 +3,22 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.clone.schoolsapplicationtwo.data.SchoolsApi
 import com.clone.schoolsapplicationtwo.data.SchoolsItem
-import com.clone.schoolsapplicationtwo.repository.SchoolsRepositoryImpl
+import com.clone.schoolsapplicationtwo.repository.SchoolsRepository
+import kotlinx.coroutines.CoroutineDispatcher
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class SchoolsViewModel : ViewModel() {
-    private val api = SchoolsApi.service
-    private val repository = SchoolsRepositoryImpl(api)
+class SchoolsViewModel(
+    private val repository: SchoolsRepository,
+    dispatcher: CoroutineDispatcher = Dispatchers.Main
+) : ViewModel() {
 
     private val _schools = MutableLiveData<List<SchoolsItem>>()
     val schools: LiveData<List<SchoolsItem>> = _schools
 
     init {
-        viewModelScope.launch {
+        viewModelScope.launch(dispatcher) {
             try {
                 val result = repository.getSchools()
 
