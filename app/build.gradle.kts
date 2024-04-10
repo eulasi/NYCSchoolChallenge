@@ -81,6 +81,15 @@ dependencies {
     testImplementation ("org.mockito:mockito-inline:3.11.2")
     testImplementation ("org.mockito:mockito-core:3.11.2")
 
+    // Lifecycle components
+    implementation ("androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1")
+    implementation ("androidx.lifecycle:lifecycle-runtime-ktx:2.3.1")
+
+    // Testing dependencies
+    testImplementation ("org.mockito:mockito-core:3.9.0")
+    testImplementation ("androidx.arch.core:core-testing:2.1.0")
+    testImplementation ("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.0")
+
 
 
 
