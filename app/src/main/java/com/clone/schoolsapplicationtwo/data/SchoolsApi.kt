@@ -15,6 +15,7 @@ interface SchoolsApi {
 
         val service: SchoolsApi by lazy {
             val gson = GsonBuilder().create()
+
             Retrofit.Builder()
                 .baseUrl(BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create(gson))

@@ -14,6 +14,7 @@ class SchoolsRepositoryImpl constructor(
     override suspend fun getSchools(): Result<Schools> {
         return try {
             val response = schoolsApi.getSchools()
+
             if (response.isSuccessful) {
                 Result.success(response.body() ?: throw IllegalStateException("Response is null"))
             } else {

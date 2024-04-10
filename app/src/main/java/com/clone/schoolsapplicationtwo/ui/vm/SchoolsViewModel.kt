@@ -19,6 +19,7 @@ class SchoolsViewModel : ViewModel() {
         viewModelScope.launch {
             try {
                 val result = repository.getSchools()
+
                 result.onSuccess { schoolsList ->
                     _schools.postValue(schoolsList)
                 }

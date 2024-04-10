@@ -3,6 +3,7 @@ package com.clone.schoolsapplicationtwo.data
 import com.google.gson.annotations.SerializedName
 
 typealias Schools = List<SchoolsItem>
+
 data class SchoolsItem(
     @SerializedName("dbn")
     val dbn: String? = "",
