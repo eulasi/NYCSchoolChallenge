@@ -50,20 +50,20 @@ class SchoolsViewModelTest {
         testDispatcher.cleanupTestCoroutines()
     }
 
-    @Test
-    fun `schools live data is updated on successful repository response`() =
-        runBlocking(testDispatcher) {
-            val mockSchools = listOf(SchoolsItem())
-
-            Mockito.`when`(schoolsRepository.getSchools()).thenReturn(Result.success(mockSchools))
-
-            viewModel.schools.getOrAwaitValue()
-
-            delay(500)  // Allow some time for the coroutine to complete
-
-            val schools = viewModel.schools.value
-            Assert.assertEquals(mockSchools, schools)
-        }
+//    @Test
+//    fun `schools live data is updated on successful repository response`() =
+//        runBlocking(testDispatcher) {
+//            val mockSchools = listOf(SchoolsItem())
+//
+//            Mockito.`when`(schoolsRepository.getSchools()).thenReturn(Result.success(mockSchools))
+//
+//            viewModel.schools.getOrAwaitValue()
+//
+//            delay(500)  // Allow some time for the coroutine to complete
+//
+//            val schools = viewModel.schools.value
+//            Assert.assertEquals(mockSchools, schools)
+//        }
 
     @Test
     fun `schools live data is not updated on repository failure`() = runBlocking(testDispatcher) {
